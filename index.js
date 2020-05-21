@@ -177,6 +177,8 @@ class Student extends Lambdasian{
     this.previousBackground = studentAtts.previousBackground;
     this.className = studentAtts.className;
     this.favSubjects = studentAtts.favSubjects;
+    this.grade = Math.floor((Math.random() * 100)) + 1;
+    this.grad = false;
   }
 
   listSubjects(){
@@ -195,7 +197,14 @@ class Student extends Lambdasian{
   sprintChallenge(subject){
     return `${this.name} has begun a sprint challenge on ${subject}`;
   }
+
+  graduate(){
+    if(this.grade > 70){
+      this.grad = true;
+    }
+  }
 }
+
 
 /*
   TASK 6
