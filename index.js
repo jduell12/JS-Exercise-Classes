@@ -210,17 +210,33 @@ class Student extends Lambdasian{
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor{
+  constructor(PMatts){
+    super(PMatts);
+    this.gradClassName = PMatts.gradClassName;
+    this.favInstructor = PMatts.favInstructor;
+  }
 
+  standUp(slackChannel){
+    return `${this.name} announces to ${slackChannel}, @channel standy times!`;
+  }
+
+  debugsCode(studentObject, subject){
+    return `${this.name} debugs ${studentObject.name}'s code on ${subject}`;
+  }
 }
+
 
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
-    - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+    - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors
+       and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
     - Add a graduate method to a student.
-      + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
-      + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+      + This method, when called, will check the grade of the student and see if they're ready to graduate from
+         Lambda School
+      + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments 
+        to increase their score.
 */
 
 ///////// END OF CHALLENGE /////////
